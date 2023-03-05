@@ -1,80 +1,80 @@
-// Запросы по кинохе
+// // Запросы по кинохе
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start () {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start () {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    } 
-}
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     } 
+// }
 
-start();
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
 
 
-function rememberMeFilms () {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-              b = prompt('На сколько оцените его?', '');
+// function rememberMeFilms () {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', ''),
+//               b = prompt('На сколько оцените его?', '');
         
-        if (a != null && b != null && a != '' && b != "" && a.length < 50) {
-            personalMovieDB.movies[a] = b;    
-            console.log ('done');
-        } else {
-            console.log ('error');
-            i--; 
-        } 
-    }
-}
+//         if (a != null && b != null && a != '' && b != "" && a.length < 50) {
+//             personalMovieDB.movies[a] = b;    
+//             console.log ('done');
+//         } else {
+//             console.log ('error');
+//             i--; 
+//         } 
+//     }
+// }
 
-rememberMeFilms ();
+// rememberMeFilms ();
 
-function detectPersonalLevel () {
-    if (personalMovieDB.count < 10) {
-        alert ('Просмотрено довольно мало фильмов');
-    } else if  (personalMovieDB.count > 10 && personalMovieDB.count < 50) {
-        alert ('Вы классический зритель');
-    } else if (personalMovieDB.count > 50) {
-        alert ('Вы киноман');
-    } else {
-        alert ('erorr');
-    }
-}
+// function detectPersonalLevel () {
+//     if (personalMovieDB.count < 10) {
+//         alert ('Просмотрено довольно мало фильмов');
+//     } else if  (personalMovieDB.count > 10 && personalMovieDB.count < 50) {
+//         alert ('Вы классический зритель');
+//     } else if (personalMovieDB.count > 50) {
+//         alert ('Вы киноман');
+//     } else {
+//         alert ('erorr');
+//     }
+// }
 
-detectPersonalLevel ();
+// detectPersonalLevel ();
 
-console.log(personalMovieDB);
+// console.log(personalMovieDB);
 
-function showMeDB () { 
-    if (personalMovieDB.privat === false) {
-        console.log('')
-    }
-}
+// function showMeDB () { 
+//     if (personalMovieDB.privat === false) {
+//         console.log('')
+//     }
+// }
 
-showMeDB ();
+// showMeDB ();
 
-function writeYourGenres () {
-    for (i = 0; i < 3; i++) {
-        const a = prompt(`Ваш любимый жанр под номером: ${i + 1}`);
-        personalMovieDB.genres[i] = a
-    }
-    console.log(personalMovieDB.genres)
-}
+// function writeYourGenres () {
+//     for (i = 0; i < 3; i++) {
+//         const a = prompt(`Ваш любимый жанр под номером: ${i + 1}`);
+//         personalMovieDB.genres[i] = a
+//     }
+//     console.log(personalMovieDB.genres)
+// }
 
-writeYourGenres ();
+// writeYourGenres ();
 
 
-// function sayHello(name) {
+// // function sayHello(name) {
 //     return `Привет, ${name}!`;
 // }
 // sayHello('Alex');
@@ -85,6 +85,21 @@ writeYourGenres ();
 // };
 // nul = returnNeighboringNumbers(5);
 // console.log (nul)
+
+// куб (объём и площадь)
+// var cubeLength;
+// function cube (cubeLength) {
+//     if (typeof(cubeLength) === 'number' && cubeLength > 0) {
+//         area = cubeLength * cubeLength * cubeLength;
+//         volume = 6 * ( cubeLength * cubeLength);
+//         console.log (`Объем куда равен: ${area}, площадь куба: ${volume}`);
+//         return area, volume
+//     } else {
+//         console.log ('Error')
+//     }
+// }
+// cube ('d');
+
 
 
 // Создает из одного числа полоску чисел кратную числу
@@ -104,6 +119,19 @@ writeYourGenres ();
 //     };
 // };
 // console.log (getMathResult(5, 10));
+
+// проверка билета
+// var bullet;
+// function getCoupeNumber(bullet) {
+//     if (typeof(bullet) !== 'number') {
+//         console.log('Проверьте правильность введенных данных')
+//     } else if (bullet <= 0 && bullet > 36) {
+//         console.log('В данном вагоне нет такого места')
+//     } else {
+//         console.log(`Ваше место в вагоне ${bullet}`)
+//     }
+// }
+// getCoupeNumber(0)
 
 // Елочка
 // let result = '';
