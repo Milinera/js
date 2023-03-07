@@ -224,41 +224,81 @@
 //     }
 //     result += '\n';
 // }
-
 // console.log (result)
 
 // остаток от деления
+// var getTimeFromMinutes;
+// function time (getTimeFromMinutes) {
+//     if (typeof(getTimeFromMinutes) !== 'number') {
+//         console.log (`${getTimeFromMinutes} не является числом`)
+//     } else if (getTimeFromMinutes < 0) {
+//         console.log (`${getTimeFromMinutes} отрицательное число`)
+//     } else {
+//         a = getTimeFromMinutes % 60
+//         b = Math.floor(getTimeFromMinutes / 60)
+//         if (a % 100 > 10 && a % 100 <= 20) {
+//             aStr = (`${a} минут`)
+//         } else if (a % 10 >= 2 && a % 10 < 5) {
+//             aStr = (`${a} минуты`)
+//         } else if (a % 10 === 1) {
+//             aStr = (`${a} минута`)
+//         } else if (a % 10 > 4 && a % 10 <= 9 || a % 10 === 0) {
+//             aStr = (`${a} минут`)
+//         }
+//         if (b % 100 > 10 && b % 100 <= 20) {
+//             bStr = (`${b} часa`)
+//         } else if (b % 10 >= 2 && b % 10 < 5) {
+//             bStr = (`${b} часa`)
+//         } else if (b % 10 === 1) {
+//             bStr = (`${b} час`)
+//         } else if (b % 10 > 4 && b % 10 <= 9 || b % 10 === 0) {
+//             bStr = (`${b} часов`)
+//         }
+//         getTimeFromMinutes = (`${bStr}, ${aStr}`)
+//     }
+//     return getTimeFromMinutes
+// }
+// var result = time (169)
+// console.log (result)
 
-var getTimeFromMinutes;
-function time (getTimeFromMinutes) {
-    if (typeof(getTimeFromMinutes) !== 'number') {
-        console.log (`${getTimeFromMinutes} не является числом`)
-    } else if (getTimeFromMinutes < 0) {
-        console.log (`${getTimeFromMinutes} отрицательное число`)
-    } else {
-        a = getTimeFromMinutes % 60
-        b = Math.floor(getTimeFromMinutes / 60)
-        if (a % 100 > 10 && a % 100 <= 20) {
-            aStr = (`${a} минут`)
-        } else if (a % 10 >= 2 && a % 10 < 5) {
-            aStr = (`${a} минуты`)
-        } else if (a % 10 === 1) {
-            aStr = (`${a} минута`)
-        } else if (a % 10 > 4 && a % 10 <= 9 || a % 10 === 0) {
-            aStr = (`${a} минут`)
-        }
-        if (b % 100 > 10 && b % 100 <= 20) {
-            bStr = (`${b} часa`)
-        } else if (b % 10 >= 2 && b % 10 < 5) {
-            bStr = (`${b} часa`)
-        } else if (b % 10 === 1) {
-            bStr = (`${b} час`)
-        } else if (b % 10 > 4 && b % 10 <= 9 || b % 10 === 0) {
-            bStr = (`${b} часов`)
-        }
-        getTimeFromMinutes = (`${bStr}, ${aStr}`)
-    }
-    return getTimeFromMinutes
-}
-var result = time (127)
-console.log (result)
+// Наибольшее число
+// function findMaxNumber(a, b ,c, d) {
+//     // Самое простое - это использовать Math.max :)
+//     // А оптимизировать такую проверку мы научимся совсем скоро
+//     if (typeof(a) !== 'number' ||
+//         typeof(b) !== 'number' ||
+//         typeof(c) !== 'number' ||
+//         typeof(d) !== 'number') {
+//         return 0;
+//     } else {
+//         return Math.max(a, b ,c, d);
+//     }
+// }
+
+// findMaxNumber(1, 5, 6.6, 10.5);
+// findMaxNumber(1, 5, '6', '10');
+
+// числа фибаначи
+// var num;
+// function calcFibanachi (num) {
+//     y = 0
+//     x = 1
+//     for (i = 0; i < num - 2; i++) {
+//         x = y + x
+//         y = x - y
+//     }
+//     return x
+// }
+// console.log(calcFibanachi(14))
+
+
+// числа фибаначи 2, с выбором стартовых чисел
+// var num;
+// function calcFibanachi (col, num1, num2) {
+//     x = [num1, num2];
+//     for (i = 2; i < col; i++) {
+//         x[i] = x[i - 1] + x [i - 2]
+//     }
+//     return x
+// }
+// console.log(calcFibanachi(14, 2, 3))
