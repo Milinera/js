@@ -303,40 +303,8 @@
 // }
 // console.log(calcFibanachi(14, 2, 3))
 
-// const personalPlanPeter = {
-//     name: "Peter",
-//     age: "29",
-//     skills: {
-//         languages: ['ru', 'eng'],
-//         programmingLangs: {
-//             js: '20%',
-//             php: '10%'
-//         },
-//         exp: '1 month'
-//     },
-//     showAgeAndLangs: function (plan) {
-//         let {name, age, skills:{languages, programmingLangs, programmingLangs:{js, php}, exp}} = plan
-//         console.log (`Мне ${age} и я владею языками: ${languages}`)
-//     }
-// };
 
-// function showExperience(plan) {
-//     let {name, age, skills:{languages, programmingLangs, programmingLangs:{js, php}, exp}} = plan
-//     console.log (programmingLangs)
-// }
-
-// function showProgrammingLangs(plan) {
-//     let {name, age, skills:{languages, programmingLangs, programmingLangs:{js, php}, exp}} = plan
-//     a = (`Язык js изучен на ${programmingLangs.js}`)
-//     console.log(a)
-// }
-
-// showExperience(personalPlanPeter);
-// showProgrammingLangs(personalPlanPeter)
-// personalPlanPeter.showAgeAndLangs(personalPlanPeter)
-
-// dsaaaaaaaaaaaaaaaaaaaaaaa
-
+// Задание 35.1
 const personalPlanPeter = {
     name: "Peter",
     age: "29",
@@ -348,36 +316,70 @@ const personalPlanPeter = {
         },
         exp: '1 month'
     },
-    showAgeAndLangs: function(plan) {
-        const {age} = plan;
-        const {languages} = plan.skills;
-        let str = `Мне ${age} и я владею языками: `;
-
-        languages.forEach(function(lang) {
-            str += `${lang.toUpperCase()} `;
-        });
-
-        return str;
+    showAgeAndLangs: function (plan) {
+        const {age} = plan
+        const {languages} = plan.skills
+        console.log (`Мне ${age} и я владею языками: ${languages}`)
     }
 };
 
-personalPlanPeter.showAgeAndLangs(personalPlanPeter);
-
 function showExperience(plan) {
-    const {exp} = plan.skills;
-    return exp;
+    var {exp} = plan.skills
+    console.log (exp)
+}
+
+function showProgrammingLangs(plan) {
+    var {programmingLangs} = plan.skills
+        i = ''
+        for(let key in programmingLangs) {
+            i += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+        }
+        console.log(i)
 }
 
 showExperience(personalPlanPeter);
+showProgrammingLangs(personalPlanPeter)
+personalPlanPeter.showAgeAndLangs(personalPlanPeter)
 
-function showProgrammingLangs(plan) {
-    let str = '';
-    const {programmingLangs} = plan.skills;
-    for (let key in programmingLangs) {
-        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
-    }
+// dsaaaaaaaaaaaaaaaaaaaaaaa
 
-    return str;
-}
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function(plan) {
+//         const {age} = plan;
+//         const {languages} = plan.skills;
+//         let str = `Мне ${age} и я владею языками: `;
 
-showProgrammingLangs(personalPlanPeter);
+//         languages.forEach(function(lang) {
+//             str += `${lang.toUpperCase()} `;
+//         });
+//         return str;
+//     }
+// };
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+// function showExperience(plan) {
+//     const {exp} = plan.skills;
+//     console.log (exp);
+//     return exp;
+// }
+// showExperience(personalPlanPeter);
+// function showProgrammingLangs(plan) {
+//     let str = '';
+//     const {programmingLangs} = plan.skills;
+//     for (let key in programmingLangs) {
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//     }
+//     console.log (str)
+//     return str;
+// }
+// showProgrammingLangs(personalPlanPeter);
