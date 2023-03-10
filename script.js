@@ -411,21 +411,52 @@
 // standardizeStrings(favoriteCities)
 
 
-sas = 'one ccxd< fsddas G?f sFASd.DAS'
-console.log (typeof(i))
 
-function reserse (str) {
-    if (typeof(str) !== "string") {
-        console.log('Это не строка !!!!')
-    } else {
-        console.log (str)
-        mass = str.split ("")
-        console.log (mass)
+// Переворот строки 
+// sas = 'one ccxd< fsddas G?f sFASd.DAS'
+// function reserse (str) {
+//     if (typeof(str) !== "string") {
+//         console.log('Это не строка !!!!')
+//     } else {
+//         console.log (str)
+//         mass = str.split ("")
+//         console.log (mass)
+//     }
+//     let result = ''
+//     for (i = mass.length - 1; i > 0; i--) {
+//         result += mass[i]
+//     }
+//     console.log (result)
+// }   
+// reserse (sas)
+// console.log (sas[1])
+// console.log (sas)
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+const twoBanks = [...baseCurrencies, ...additionalCurrencies]
+const haveNoneOnBanks = ['USD', 'RUB', 'CNY']
+console.log (twoBanks)
+function availableCurr (all, noVol) {
+    var result = 'Доступные валюты: \n';
+        col = [];
+    for (i = 0; i < all.length; i++) {
+        col[i] = 0;
     }
-    let result = ''
-    for (i = mass.length - 1; i > 0; i--) {
-        result += mass[i]
+    for (i = 0; i < all.length; i++) {
+        for (a = 0; a < noVol.length; a++) {
+            if (all[i] !== noVol[a]) {
+                col[i]++
+            }
+        }
+    }
+    console.log (col)
+    for (i = 0; i < all.length; i++) {
+        if (col[i] === noVol.length) {
+            result += `${all[i]} \n`
+        }
     }
     console.log (result)
-}   
-reserse (sas)
+}
+availableCurr(twoBanks, haveNoneOnBanks)
