@@ -305,44 +305,48 @@
 
 
 // Задание 35.1
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function (plan) {
-        const {age} = plan
-        const {languages} = plan.skills
-        console.log (`Мне ${age} и я владею языками: ${languages}`)
-    }
-};
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function (plan) {
+//         result = ''
+//         const {age} = plan
+//         const {languages} = plan.skills
+//         result += (`Мне ${age} и я владею языками: `)
+//         languages.forEach (function (x){
+//             result += (`${x.toUpperCase()} `)
+//         });
+//         console.log (result)
+//     }
+// };
 
-function showExperience(plan) {
-    var {exp} = plan.skills
-    console.log (exp)
-}
+// function showExperience(plan) {
+//     var {exp} = plan.skills
+//     console.log (exp)
+// }
 
-function showProgrammingLangs(plan) {
-    var {programmingLangs} = plan.skills
-        i = ''
-        for(let key in programmingLangs) {
-            i += `Язык ${key} изучен на ${programmingLangs[key]}\n`
-        }
-        console.log(i)
-}
+// function showProgrammingLangs(plan) {
+//     var {programmingLangs} = plan.skills
+//         i = ''
+//         for(let key in programmingLangs) {
+//             i += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//         }
+//         console.log(i)
+// }
 
-showExperience(personalPlanPeter);
-showProgrammingLangs(personalPlanPeter)
-personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+// showExperience(personalPlanPeter);
+// showProgrammingLangs(personalPlanPeter)
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter)
 
-// dsaaaaaaaaaaaaaaaaaaaaaaa
-
+// вариант от курса
 // const personalPlanPeter = {
 //     name: "Peter",
 //     age: "29",
@@ -383,3 +387,45 @@ personalPlanPeter.showAgeAndLangs(personalPlanPeter)
 //     return str;
 // }
 // showProgrammingLangs(personalPlanPeter);
+
+
+
+// Задание 35.2
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// function showFamily(arr) {
+//     if (arr.length === 0) {
+//         console.log (`Вы приемный`)
+//     } else {
+//         console.log (`Семья состоит из: ${arr}`)
+//     }
+// }
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// function standardizeStrings(arr) {
+//     i = ''
+//     arr.forEach(function(x) {
+//         i += `${x.toLowerCase()} \n`
+//     })
+//     console.log (i)
+// }
+// showFamily(family)
+// standardizeStrings(favoriteCities)
+
+
+sas = 'one ccxd< fsddas G?f sFASd.DAS'
+console.log (typeof(i))
+
+function reserse (str) {
+    if (typeof(str) !== "string") {
+        console.log('Это не строка !!!!')
+    } else {
+        console.log (str)
+        mass = str.split ("")
+        console.log (mass)
+    }
+    let result = ''
+    for (i = mass.length - 1; i > 0; i--) {
+        result += mass[i]
+    }
+    console.log (result)
+}   
+reserse (sas)
