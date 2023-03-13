@@ -466,48 +466,70 @@
 
 
 // 38.1 магазин
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 25,
+//     budget: 50000
+// }
+// function isBudgetEnough(data) {
+//     var costOnOneShop = [];
+//     allCost = 0;
+//     for (i = 0; i < data.shops.length; i++) {
+//         costOnOneShop[i] = data.shops[i].width * data.shops[i].length * data.height * data.moneyPer1m3
+//     }
+//     for (i = 0; i < data.shops.length; i++) {
+//         allCost = allCost + costOnOneShop[i]
+//     }
+//     if (allCost > data.budget) {
+//         console.log ('Нет деняг(')
+//     } else {
+//         console.log ('Деньги есть')
+//     }
+// }
+// isBudgetEnough (shoppingMallData)
 
-const shoppingMallData = {
-    shops: [
-        {
-            width: 10,
-            length: 5
-        },
-        {
-            width: 15,
-            length: 7
-        },
-        {
-            width: 20,
-            length: 5
-        },
-        {
-            width: 8,
-            length: 10
-        }
-    ],
-    height: 5,
-    moneyPer1m3: 30,
-    budget: 50000
+
+// 38.2 игроки и игра 3х3х3
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
+    arr.sort()
+    var firstGroup = []
+        secondGroup = []
+        trerdGroup = []
+        otherPeople = []
+    for (i = 0; i < 3; i++) {
+        firstGroup[i] = students[i]
+    }
+    for (i = 0; i < 3; i++) {
+        secondGroup[i] = students[i + 3]
+    }
+    for (i = 0; i < 3; i++) {
+        trerdGroup[i] = students[i + 6]
+    }
+    for (i = 0; i < students.length - 9; i++) {
+        otherPeople[i] = students[i + 9]
+    }
+    console.log (`Первая группа ${firstGroup.join(', ')} \nВторая группа ${secondGroup.join(', ')} \nТретья группа ${trerdGroup.join(', ')}\nНе в игре ${otherPeople.join(', ')}`)
+    console.log(firstGroup, secondGroup, trerdGroup, otherPeople)
 }
 
-function isBudgetEnough(data) {
-    var costOnOneShop = [];
-    allCost = 0;
-    for (i = 0; i < data.shops.length; i++) {
-        costOnOneShop[i] = data.shops[i].width * data.shops[i].length * data.height * data.moneyPer1m3
-    }
-    console.log (costOnOneShop)
-    for (i = 0; i < data.shops.length; i++) {
-        allCost = allCost + costOnOneShop[i]
-    }
-    console.log (allCost)
-    if (allCost > data.budget) {
-        console.log ('Нет деняг(')
-    } else {
-        console.log ('Деньги есть')
-    }
-}
-
-isBudgetEnough (shoppingMallData)
-console.log (shoppingMallData.shops.length) 
+sortStudentsByGroups(students)
