@@ -508,28 +508,50 @@
 
 
 // 38.2 игроки и игра 3х3х3
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// function sortStudentsByGroups(arr) {
+//     arr.sort()
+//     var firstGroup = []
+//         secondGroup = []
+//         trerdGroup = []
+//         otherPeople = []
+//     for (i = 0; i < 3; i++) {
+//         firstGroup[i] = students[i]
+//     }
+//     for (i = 0; i < 3; i++) {
+//         secondGroup[i] = students[i + 3]
+//     }
+//     for (i = 0; i < 3; i++) {
+//         trerdGroup[i] = students[i + 6]
+//     }
+//     for (i = 0; i < students.length - 9; i++) {
+//         otherPeople[i] = students[i + 9]
+//     }
+//     console.log (`Первая группа ${firstGroup.join(', ')} \nВторая группа ${secondGroup.join(', ')} \nТретья группа ${trerdGroup.join(', ')}\nНе в игре ${otherPeople.join(', ')}`)
+// }
+// sortStudentsByGroups(students)
 
+
+// вариан задачи выше через .push
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+var a = []
+    b = []
+    c = []
+    d = []
 function sortStudentsByGroups(arr) {
-    arr.sort()
-    var firstGroup = []
-        secondGroup = []
-        trerdGroup = []
-        otherPeople = []
-    for (i = 0; i < 3; i++) {
-        firstGroup[i] = students[i]
+    arr.sort ()
+    for (i = 0; i < arr.length; i++) {
+        if (i < 3) {
+            a.push(`${arr[i]}, `);
+        } else if (i < 6) {
+            b.push(arr[i]);
+        } else if (i < 9) {
+            c.push(arr[i]);
+        } else {
+            d.push(arr[i]);
+        }
     }
-    for (i = 0; i < 3; i++) {
-        secondGroup[i] = students[i + 3]
-    }
-    for (i = 0; i < 3; i++) {
-        trerdGroup[i] = students[i + 6]
-    }
-    for (i = 0; i < students.length - 9; i++) {
-        otherPeople[i] = students[i + 9]
-    }
-    console.log (`Первая группа ${firstGroup.join(', ')} \nВторая группа ${secondGroup.join(', ')} \nТретья группа ${trerdGroup.join(', ')}\nНе в игре ${otherPeople.join(', ')}`)
-    console.log(firstGroup, secondGroup, trerdGroup, otherPeople)
+    console.log (`Первая команда ${a}, \nВторая команда ${b}, \nТретья команда ${c}, \nВне игры ${d}`)
 }
 
-sortStudentsByGroups(students)
+sortStudentsByGroups (students);
