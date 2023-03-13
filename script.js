@@ -1,80 +1,86 @@
 // // Запросы по кинохе
+let numberOfFilms;
+function start () {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+};
 
-// let numberOfFilms;
+start();
 
-// function start () {
-//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    rememberMeFilms: function () {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', ''),
+                b = prompt('На сколько оцените его?', '');
+            if (a != null && b != null && a != '' && b != "" && a.length < 50) {
+                personalMovieDB.movies[a] = b;    
+                console.log ('done');
+            } else {
+                console.log ('error');
+                i--; 
+            } 
+        }
+    },
+    detectPersonalLevel: function () {
+        if (personalMovieDB.count < 10) {
+            alert ('Просмотрено довольно мало фильмов');
+        } else if  (personalMovieDB.count > 10 && personalMovieDB.count < 50) {
+            alert ('Вы классический зритель');
+        } else if (personalMovieDB.count > 50) {
+            alert ('Вы киноман');
+        } else {
+            alert ('erorr');
+        }
+    },
+    showMeDB: function () {
+        if (personalMovieDB.privat === false) {
+            console.log('Закрыт')
+        } else {
+            console.log('Открыт')
+        }
+    },
+    writeYourGenres: function () {
+        var resultGenres = `Любимый жанр `
+        for (i = 0; i < 3; i++) {
+            const a = prompt(`Ваш любимый жанр под номером: ${i + 1}`);
+            console.log (a)
+            if (a === null || a === '') {
+                i--
+                alert ('Напиши блять жанр а не врт эту хуйню')
+            } else {
+                personalMovieDB.genres[i] = a
+            }
+        }
+        personalMovieDB.genres.forEach((item, i) => {
+            resultGenres  += `# ${i + 1} - это ${item} `
+        })
+        console.log(resultGenres)
+    },
+    toggleVisibleMyDB: function () {
+        if (personalMovieDB.privat === false) {
+            personalMovieDB.privat = true
+        } else {
+            personalMovieDB.privat = false 
+        }
+    },
+};
 
-//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//     } 
-// }
+personalMovieDB.rememberMeFilms ();
+personalMovieDB.detectPersonalLevel ();
+personalMovieDB.showMeDB ();
+personalMovieDB.writeYourGenres ();
+personalMovieDB.toggleVisibleMyDB ();
+personalMovieDB.showMeDB ();
+console.log (personalMovieDB)
 
-// start();
-
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-
-
-// function rememberMeFilms () {
-//     for (let i = 0; i < 2; i++) {
-//         const a = prompt('Один из последних просмотренных фильмов?', ''),
-//               b = prompt('На сколько оцените его?', '');
-        
-//         if (a != null && b != null && a != '' && b != "" && a.length < 50) {
-//             personalMovieDB.movies[a] = b;    
-//             console.log ('done');
-//         } else {
-//             console.log ('error');
-//             i--; 
-//         } 
-//     }
-// }
-
-// rememberMeFilms ();
-
-// function detectPersonalLevel () {
-//     if (personalMovieDB.count < 10) {
-//         alert ('Просмотрено довольно мало фильмов');
-//     } else if  (personalMovieDB.count > 10 && personalMovieDB.count < 50) {
-//         alert ('Вы классический зритель');
-//     } else if (personalMovieDB.count > 50) {
-//         alert ('Вы киноман');
-//     } else {
-//         alert ('erorr');
-//     }
-// }
-
-// detectPersonalLevel ();
-
-// console.log(personalMovieDB);
-
-// function showMeDB () { 
-//     if (personalMovieDB.privat === false) {
-//         console.log('')
-//     }
-// }
-
-// showMeDB ();
-
-// function writeYourGenres () {
-//     for (i = 0; i < 3; i++) {
-//         const a = prompt(`Ваш любимый жанр под номером: ${i + 1}`);
-//         personalMovieDB.genres[i] = a
-//     }
-//     console.log(personalMovieDB.genres)
-// }
-
-// writeYourGenres ();
-
-
-// // function sayHello(name) {
+// function sayHello(name) {
 //     return `Привет, ${name}!`;
 // }
 // sayHello('Alex');
@@ -433,30 +439,27 @@
 // console.log (sas)
 
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
-const twoBanks = [...baseCurrencies, ...additionalCurrencies]
-const haveNoneOnBanks = ['USD', 'RUB', 'CNY']
-console.log (twoBanks)
-function availableCurr (all, noVol) {
-    var result = 'Доступные валюты: \n';
-        col = [];
-    for (i = 0; i < all.length; i++) {
-        col[i] = 0;
-    }
-    for (i = 0; i < all.length; i++) {
-        for (a = 0; a < noVol.length; a++) {
-            if (all[i] !== noVol[a]) {
-                col[i]++
-            }
-        }
-    }
-    console.log (col)
-    for (i = 0; i < all.length; i++) {
-        if (col[i] === noVol.length) {
-            result += `${all[i]} \n`
-        }
-    }
-    console.log (result)
-}
-availableCurr(twoBanks, haveNoneOnBanks)
+
+// Банкомат с проверкой наличие валюты 
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const twoBanks = [...baseCurrencies, ...additionalCurrencies]
+// const haveNoOneOnBanks = ['USD', 'RUB']
+// console.log (twoBanks)
+// function availableCurr (all, noVol) {
+//     var result = 'Доступные валюты: \n';
+//         col = [];
+//     for (i = 0; i < all.length; i++) {
+//         col[i] = 0;
+//         for (a = 0; a < noVol.length; a++) {
+//             if (all[i] !== noVol[a]) {
+//                 col[i]++
+//             }
+//         }
+//         if (col[i] === noVol.length) {
+//             result += `${all[i]} \n`
+//         }
+//     }
+//     console.log (result)
+// }
+// availableCurr(twoBanks, haveNoOneOnBanks)
