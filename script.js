@@ -533,25 +533,26 @@
 
 
 // вариан задачи выше через .push
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
-var a = []
-    b = []
-    c = []
-    d = []
-function sortStudentsByGroups(arr) {
-    arr.sort ()
-    for (i = 0; i < arr.length; i++) {
-        if (i < 3) {
-            a.push(`${arr[i]}, `);
-        } else if (i < 6) {
-            b.push(arr[i]);
-        } else if (i < 9) {
-            c.push(arr[i]);
-        } else {
-            d.push(arr[i]);
-        }
-    }
-    console.log (`Первая команда ${a}, \nВторая команда ${b}, \nТретья команда ${c}, \nВне игры ${d}`)
-}
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// var a = []
+//     b = []
+//     c = []
+//     d = []
+// function sortStudentsByGroups(arr) {
+//     arr.sort ()
+//     for (i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else {
+//             d.push(arr[i]);
+//         }
+//     }
+//     console.log (`Первая команда ${a}, \nВторая команда ${b}, \nТретья команда ${c}, \nВне игры ${d}`)
+// }
+// sortStudentsByGroups (students);
 
-sortStudentsByGroups (students);
+// состояние овоща
