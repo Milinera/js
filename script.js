@@ -556,3 +556,21 @@
 // sortStudentsByGroups (students);
 
 // состояние овоща
+
+function createCounter ( ) {
+    let counter = 0;
+
+    const myFunction = function () {
+        counter = counter + 1
+        return counter
+    }
+    
+    return myFunction
+}
+
+const incr = myFunction();
+const c1 = incr()
+const c2 = incr()
+const c3 = incr()
+
+console.log (c1, c2, c3)
