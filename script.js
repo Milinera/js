@@ -557,20 +557,89 @@
 
 // состояние овоща
 
-function createCounter ( ) {
-    let counter = 0;
 
-    const myFunction = function () {
-        counter = counter + 1
-        return counter
-    }
+// замыкание
+// function createCounter (b) {
+//     const myFunction = function () {
+//         b = b + 1
+//         return b
+//     }
     
-    return myFunction
-}
+//     return myFunction
+// }
+ 
+// const incr = createCounter(3);
+// const c1 = incr()
+// const c2 = incr()
+// const c3 = incr()
 
-const incr = myFunction();
-const c1 = incr()
-const c2 = incr()
-const c3 = incr()
+// console.log (c1, c2, c3)
 
-console.log (c1, c2, c3)
+
+// function foo(a,b) {
+//     const d = a[0];
+//     const {eng} = b;
+//     console.log (d)
+//     return `${d} ${eng}`;
+// }
+ 
+// const result = foo(['Hello', 'Привет'], {ru: 'Мир', eng: 'World'})
+// console.log (result)
+
+
+// Задача с рестораном 
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         {
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '30$',
+//     openNow: true
+// };
+
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+//     return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow))
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, (fDish.price.length - 1)) + +sDish.price.slice(0, (sDish.price.length - 1)) < average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
+
+//     copy.waitors = [{name: 'Mike', age: 32}];
+//     return copy;
+// }
+
+// var copy = transferWaitors(restorantData);
+// console.log (copy.waitors)
+// console.log (restorantData.waitors)
